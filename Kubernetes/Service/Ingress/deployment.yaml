@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Demployment
+metadata:
+  name: nginx-Demployment
+spec:
+  replicas: 3
+  selector:
+    matchLables:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-pod
+      lables:
+        app: nginx
+    spec:
+      containers:
+         - name: nginx-container
+           image: nginx: latest
+           ports:
+             - containerPort: 80  
